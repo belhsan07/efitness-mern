@@ -13,7 +13,7 @@ export const listAccessories = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:5000/api/products`);
+    const { data } = await axios.get(`/api/products`);
     const accessoriesData = data.filter((p) => p.category === 'accessories');
 
     dispatch({
@@ -36,7 +36,7 @@ export const listEquipment = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:5000/api/products`);
+    const { data } = await axios.get(`/api/products`);
     const equipmentData = data.filter((p) => p.category === 'equipment');
 
     dispatch({
@@ -62,7 +62,7 @@ export const listSupplements = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:5000/api/products`);
+    const { data } = await axios.get(`/api/products`);
     const supplementData = data.filter((p) => p.category === 'supplement');
 
     dispatch({
@@ -85,7 +85,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:5000/api/products/${id}`);
+    const { data } = await axios.get(`/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
